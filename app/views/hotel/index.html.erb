@@ -1,0 +1,14 @@
+<h1>Hotels</h1>
+<%= form_tag hotel_path(@hotels) do %>
+  <%= text_field_tag :term %>
+  <%= submit_tag 'Search' %>
+<% end %>
+
+
+ 
+  <% @hotels.each do |hotel| %>
+    
+      <ul>
+      <%= link_to hotel.name, hotel_path(hotel) %>
+    </ul>
+  <% end %>

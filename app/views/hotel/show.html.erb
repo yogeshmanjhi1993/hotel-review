@@ -1,0 +1,35 @@
+
+<%= form_for :hotel, url: hotel_path do |f| %> 
+
+        <% if @hotel.errors.any? %>
+        <div class="alert alert-danger fade in">
+          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+          <div id="error_explanation">
+            <% @hotel.errors.full_messages.each do |message| %>
+              <%= message %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+
+ <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= f.label :review %><br>
+    <%= f.text_area :review %>
+  </p>
+
+  <p>
+    <%= f.label :rating %><br>
+    <%= f.text_area :rating %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+
